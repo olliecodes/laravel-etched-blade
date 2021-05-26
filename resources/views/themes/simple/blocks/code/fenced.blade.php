@@ -1,0 +1,1 @@
+<pre><code class="{{ $attributes['class'] ?? '' }}">{{ $content }}</code></pre>

@@ -1,0 +1,14 @@
+language: php
+
+php:
+  - 8.0
+
+install:
+  - travis_retry composer self-update
+  - travis_retry composer install --no-interaction --no-suggest --dev
+
+script:
+  - XDEBUG_MODE=coverage vendor/bin/phpunit --verbose --colors=always --coverage-clover build/logs/clover.xml --coverage-text
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
