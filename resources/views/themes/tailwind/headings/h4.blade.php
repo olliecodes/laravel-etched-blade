@@ -1,0 +1,1 @@
+<h4 class="">{!! $content !!}</h4>
