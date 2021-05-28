@@ -42,7 +42,7 @@ class EtchedServiceProvider extends ServiceProvider
         $compiler->directive('etched', function ($expression) {
             self::$etchedTheme = $expression;
 
-            return '<?php \OllieCodes\Etched\Facades\Etched::render(\'';
+            return '<?php \OllieCodes\Etched\Facades\Etched::render(<<<MARKDOWN';
         });
 
 
@@ -50,7 +50,7 @@ class EtchedServiceProvider extends ServiceProvider
             $theme             = self::$etchedTheme;
             self::$etchedTheme = null;
 
-            return '\'' . ($theme ? ', ' . $theme : '') . '); ?>';
+            return 'MARKDOWN;' . ($theme ? ', ' . $theme : '') . '); ?>';
         });
     }
 
