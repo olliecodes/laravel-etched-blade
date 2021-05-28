@@ -5,12 +5,6 @@ namespace OllieCodes\Etched;
 use Illuminate\Config\Repository;
 use Illuminate\Contracts\View\Factory;
 use InvalidArgumentException;
-use League\CommonMark\Block\Element\BlockQuote;
-use League\CommonMark\Block\Element\Heading;
-use League\CommonMark\Block\Renderer\BlockQuoteRenderer;
-use League\CommonMark\Block\Renderer\HeadingRenderer;
-use League\CommonMark\ConfigurableEnvironmentInterface;
-use OllieCodes\Etched\Blocks\Renderer\BlockBladeRenderer;
 use Webuni\FrontMatter\FrontMatter;
 
 class Etched
