@@ -10,11 +10,13 @@ $attributes
 Contains an array containing HTML attributes provided by the Attribute extension for league/commonmark. If this
 extension or no attributes are present, this will be an empty array.
 
+$languages
+==========
+Contains an array of languages, if provided in the original markdown.
+
 $content
 ========
-Contains the content, can also contain HTML.
+Contains the content, will not contain HTML.
 
 --}}
-<blockquote {{ isset($attributes['cite']) ? 'cite="'.$attributes['cite'].'"' : '' }}>
-    {!! $content !!}
-</blockquote>
+<pre><code class="{{ implode(' ', array_map(static function(string $language) { return 'language-'.$language; }, $languages)) }}">{{ $content }}</code></pre>

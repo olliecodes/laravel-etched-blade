@@ -12,9 +12,9 @@ extension or no attributes are present, this will be an empty array.
 
 $content
 ========
-Contains the content, can also contain HTML.
+Contains the paragraph, can contain HTML.
 
 --}}
-<blockquote {{ isset($attributes['cite']) ? 'cite="'.$attributes['cite'].'"' : '' }}>
+<p>
     {!! $content !!}
-</blockquote>
+</p>

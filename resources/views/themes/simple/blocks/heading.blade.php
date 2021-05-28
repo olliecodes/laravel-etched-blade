@@ -10,11 +10,13 @@ $attributes
 Contains an array containing HTML attributes provided by the Attribute extension for league/commonmark. If this
 extension or no attributes are present, this will be an empty array.
 
+$level
+==========
+The level of heading, ie; 1,2,3,4,5 or 6.
+
 $content
 ========
-Contains the content, can also contain HTML.
+Contains the content, can contain HTML.
 
 --}}
-<blockquote {{ isset($attributes['cite']) ? 'cite="'.$attributes['cite'].'"' : '' }}>
-    {!! $content !!}
-</blockquote>
+<h{{ $level }}>{!! $content !!}</h{{ $level }}>

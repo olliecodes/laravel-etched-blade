@@ -12,9 +12,10 @@ extension or no attributes are present, this will be an empty array.
 
 $content
 ========
-Contains the content, can also contain HTML.
+Contains the inner content of the list, will typically be HTML representing the items using the themes list-item
+template.
 
 --}}
-<blockquote {{ isset($attributes['cite']) ? 'cite="'.$attributes['cite'].'"' : '' }}>
+<ul>
     {!! $content !!}
-</blockquote>
+</ul>

@@ -10,11 +10,5 @@ $attributes
 Contains an array containing HTML attributes provided by the Attribute extension for league/commonmark. If this
 extension or no attributes are present, this will be an empty array.
 
-$content
-========
-Contains the content, can also contain HTML.
-
 --}}
-<blockquote {{ isset($attributes['cite']) ? 'cite="'.$attributes['cite'].'"' : '' }}>
-    {!! $content !!}
-</blockquote>
+<img src="{{ $attributes['src'] }}" alt="{{ $attributes['alt'] }}" title="{{ $attributes['title'] }}">
