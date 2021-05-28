@@ -8,6 +8,8 @@ use Illuminate\View\Compilers\BladeCompiler;
 
 class EtchedServiceProvider extends ServiceProvider
 {
+    private static $etchedTheme = null;
+
     public function boot(): void
     {
         if ($this->app->runningInConsole()) {
@@ -29,13 +31,26 @@ class EtchedServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerEtchedService();
+        $this->registerEtchedViewEngine();
     }
 
     private function registerBladeDirectives(): void
     {
+        $compiler = $this->app->make(BladeCompiler::class);
+
         // Register the core etched directive
-        $this->app->make(BladeCompiler::class)->directive('etched', function ($expression) {
-            return "<?php \OllieCodes\Etched\Facades\Etched::render($expression) ?>";
+        $compiler->directive('etched', function ($expression) {
+            self::$etchedTheme = $expression;
+
+            return '<?php \OllieCodes\Etched\Facades\Etched::render(\'';
+        });
+
+
+        $compiler->directive('endetched', function () {
+            $theme             = self::$etchedTheme;
+            self::$etchedTheme = null;
+
+            return '\'' . ($theme ? ', ' . $theme : '') . '); ?>';
         });
     }
 
@@ -48,6 +63,15 @@ class EtchedServiceProvider extends ServiceProvider
                 $this->app->make(Factory::class)
             );
         }, true);
+    }
+
+    private function registerEtchedViewEngine(): void
+    {
+        $this->app->get('view.engine.resolver')->register('etched', function () {
+            return new EtchedEngine($this->app->make(Etched::class), $this->app['files']);
+        });
+
+        $this->app->get('view')->addExtension('md', 'etched');
     }
 
     private function registerViews(): void
