@@ -4,6 +4,7 @@ namespace OllieCodes\Etched;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\View\Compilers\BladeCompiler;
 
 class EtchedServiceProvider extends ServiceProvider
 {
@@ -14,6 +15,7 @@ class EtchedServiceProvider extends ServiceProvider
         }
 
         $this->registerViews();
+        $this->registerBladeDirectives();
     }
 
     private function publishAssets(): void
@@ -27,6 +29,14 @@ class EtchedServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerEtchedService();
+    }
+
+    private function registerBladeDirectives(): void
+    {
+        // Register the core etched directive
+        $this->app->make(BladeCompiler::class)->directive('etched', function ($expression) {
+            return "<?php \OllieCodes\Etched\Facades\Etched::render($expression) ?>";
+        });
     }
 
     private function registerEtchedService(): void
