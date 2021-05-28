@@ -82,21 +82,18 @@ return [
         ],
 
         'block' => [
-            'heading'        => [
-                'h1' => 'blocks.headings.h1',
-                'h2' => 'blocks.headings.h2',
-                'h3' => 'blocks.headings.h3',
-                'h4' => 'blocks.headings.h4',
-                'h5' => 'blocks.headings.h5',
-                'h6' => 'blocks.headings.h6',
-            ],
+            'heading'        => 'blocks.heading',
             'blockquote'     => 'blocks.blockquote',
             'code'           => [
-                'fenced'   => 'blocks.code.fenced',
-                'indented' => 'blocks.code.indented',
+                'fenced'   => 'blocks.code-fenced',
+                'indented' => 'blocks.code-indented',
             ],
             'html'           => 'blocks.html',
-            'list'           => 'blocks.list',
+            'list'           => [
+                'ordered'   => 'blocks.list-ordered',
+                'unordered' => 'blocks.list-unordered',
+                'item'      => 'blocks.list-item',
+            ],
             'paragraph'      => 'blocks.paragraph',
             'thematic-break' => 'blocks.thematic-break',
         ],
