@@ -1,6 +1,4 @@
-# Etched
-
-A Laravel package which converts markdown to HTML using blade templates.
+<img src="package-banner@2x.png" title="Laravel Etched Blade" alt="A Laravel package that uses blade templates to parse and convert markdown to HTML">
 
 ![Packagist Version](https://img.shields.io/packagist/v/olliecodes/laravel-etched)
 ![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/olliecodes/laravel-etched)
