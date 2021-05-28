@@ -146,6 +146,8 @@ class Theme
             throw new InvalidArgumentException(sprintf('Theme \'%s\' is missing its \'%s\' configuration', $this->getName(), $type . '.' . $name));
         }
 
+        $data['frontMatter'] = $this->frontMatterData;
+
         return $this->getViewFactory()->make($viewPath . '.' . $subViewPath, $data)->render();
     }
 
