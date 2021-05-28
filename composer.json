@@ -1,6 +1,6 @@
 {
-  "name": "olliecodes/laravel-etched",
-  "description": "A markdown parser that uses Laravel blade to render content",
+  "name": "olliecodes/laravel-etched-blade",
+  "description": "A Laravel package that uses blade templates to parse and convert markdown to HTML",
   "type": "library",
   "require": {
     "php": "^7.3|^8.0",
