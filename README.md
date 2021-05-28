@@ -78,7 +78,7 @@ As an argument when including.
 @include('markdown-file', ['theme' => 'simple'])
 ```
 
-On in the front-matter of the markdown.
+Or in the front-matter of the markdown.
 
 ```markdown
 ---
