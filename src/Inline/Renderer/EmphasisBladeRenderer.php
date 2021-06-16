@@ -22,7 +22,7 @@ class EmphasisBladeRenderer implements InlineRendererInterface, ConfigurationAwa
             // @codeCoverageIgnoreEnd
         }
 
-        return $this->getTheme()->inline('code', [
+        return $this->getTheme()->inline('emphasis', [
             'attributes' => $inline->getData('attributes', []),
             'content'    => $htmlRenderer->renderInlines($inline->children()),
         ]);
