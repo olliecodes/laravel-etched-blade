@@ -43,25 +43,25 @@ class EtchedRenderers
     public static function register(ConfigurableEnvironmentInterface $environment, array $extensions): void
     {
         // Block renderers
-        $environment->addBlockRenderer(BlockQuote::class, new BlockQuoteBladeRenderer, 1)
-                    ->addBlockRenderer(FencedCode::class, new FencedCodeBladeRenderer, 1)
-                    ->addBlockRenderer(Heading::class, new HeadingBladeRenderer, 1)
-                    ->addBlockRenderer(HtmlBlock::class, new HtmlBladeRenderer, 1)
-                    ->addBlockRenderer(IndentedCode::class, new IndentedCodeBladeRenderer, 1)
-                    ->addBlockRenderer(ListBlock::class, new ListBladeRenderer, 1)
-                    ->addBlockRenderer(ListItem::class, new ListItemBladeRenderer, 1)
-                    ->addBlockRenderer(Paragraph::class, new ParagraphBladeRenderer, 1)
-                    ->addBlockRenderer(ThematicBreak::class, new ThematicBreakBladeRenderer, 1);
+        $environment->addBlockRenderer(BlockQuote::class, new BlockQuoteBladeRenderer, 100)
+                    ->addBlockRenderer(FencedCode::class, new FencedCodeBladeRenderer, 100)
+                    ->addBlockRenderer(Heading::class, new HeadingBladeRenderer, 100)
+                    ->addBlockRenderer(HtmlBlock::class, new HtmlBladeRenderer, 100)
+                    ->addBlockRenderer(IndentedCode::class, new IndentedCodeBladeRenderer, 100)
+                    ->addBlockRenderer(ListBlock::class, new ListBladeRenderer, 100)
+                    ->addBlockRenderer(ListItem::class, new ListItemBladeRenderer, 100)
+                    ->addBlockRenderer(Paragraph::class, new ParagraphBladeRenderer, 100)
+                    ->addBlockRenderer(ThematicBreak::class, new ThematicBreakBladeRenderer, 100);
 
         // Inline renderers
-        $environment->addInlineRenderer(Code::class, new CodeBladeRenderer, 1)
-                    ->addInlineRenderer(Emphasis::class, new EmphasisBladeRenderer, 1)
-                    ->addInlineRenderer(HtmlInline::class, new InlineHtmlBladeRenderer, 1)
-                    ->addInlineRenderer(Image::class, new ImageBladeRenderer, 1)
-                    ->addInlineRenderer(Link::class, new LinkBladeRenderer, 1)
-                    ->addInlineRenderer(Newline::class, new NewlineBladeRenderer, 1)
-                    ->addInlineRenderer(Strong::class, new StrongBladeRenderer, 1)
-                    ->addInlineRenderer(Text::class, new TextBladeRenderer, 1);
+        $environment->addInlineRenderer(Code::class, new CodeBladeRenderer, 100)
+                    ->addInlineRenderer(Emphasis::class, new EmphasisBladeRenderer, 100)
+                    ->addInlineRenderer(HtmlInline::class, new InlineHtmlBladeRenderer, 100)
+                    ->addInlineRenderer(Image::class, new ImageBladeRenderer, 100)
+                    ->addInlineRenderer(Link::class, new LinkBladeRenderer, 100)
+                    ->addInlineRenderer(Newline::class, new NewlineBladeRenderer, 100)
+                    ->addInlineRenderer(Strong::class, new StrongBladeRenderer, 100)
+                    ->addInlineRenderer(Text::class, new TextBladeRenderer, 100);
 
         // Extension specific renderers
         // - dunno
