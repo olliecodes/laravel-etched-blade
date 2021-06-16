@@ -18,12 +18,20 @@ class FencedCodeBladeRenderer implements BlockRendererInterface, ConfigurationAw
     public function render(AbstractBlock $block, ElementRendererInterface $htmlRenderer, bool $inTightList = false)
     {
         if (! ($block instanceof FencedCode)) {
+            // @codeCoverageIgnoreStart
             throw new InvalidArgumentException('Incompatible block type: ' . get_class($block));
+            // @codeCoverageIgnoreEnd
+        }
+
+        $languages = $block->getInfoWords();
+
+        if (count($languages) === 1 && empty($languages[0])) {
+            $languages = [];
         }
 
         return $this->getTheme()->block('code-fenced', [
             'attributes' => $block->getData('attributes', []),
-            'languages'  => $block->getInfoWords(),
+            'languages'  => $languages,
             'content'    => Xml::escape($block->getStringContent()),
         ]);
     }
