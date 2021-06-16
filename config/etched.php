@@ -84,10 +84,8 @@ return [
         'block' => [
             'heading'        => 'blocks.heading',
             'blockquote'     => 'blocks.blockquote',
-            'code'           => [
-                'fenced'   => 'blocks.code-fenced',
-                'indented' => 'blocks.code-indented',
-            ],
+            'code-fenced'    => 'blocks.code-fenced',
+            'code-indented'  => 'blocks.code-indented',
             'html'           => 'blocks.html',
             'list'           => [
                 'ordered'   => 'blocks.list-ordered',
