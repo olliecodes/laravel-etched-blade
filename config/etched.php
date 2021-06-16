@@ -21,7 +21,7 @@ return [
         'options' => [
             'extensions' => [
                 //League\CommonMark\Extension\Autolink\AutolinkExtension::class,
-                //League\CommonMark\Extension\ExternalLink\ExternalLinkExtension::class,
+                League\CommonMark\Extension\ExternalLink\ExternalLinkExtension::class,
                 //League\CommonMark\Extension\GithubFlavoredMarkdownExtension::class,
                 //League\CommonMark\Extension\Footnote\FootnoteExtension::class,
                 League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension::class,
@@ -29,6 +29,8 @@ return [
             ],
 
             'config' => [
+                'html_input' => League\CommonMark\EnvironmentInterface::HTML_INPUT_ALLOW,
+
                 /*
                  * Reference: https://commonmark.thephpleague.com/1.6/extensions/external-links
                  */
