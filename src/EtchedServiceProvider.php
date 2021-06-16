@@ -50,7 +50,7 @@ class EtchedServiceProvider extends ServiceProvider
             $theme             = self::$etchedTheme;
             self::$etchedTheme = null;
 
-            return "\n".'MARKDOWN;' . ($theme ? ', ' . $theme : '') . '); ?>';
+            return "\n".'MARKDOWN' . ($theme ? ', ' . $theme : '') . '); ?>';
         });
     }
 
