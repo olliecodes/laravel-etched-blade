@@ -15,4 +15,4 @@ $content
 Contains the content, will not contain HTML.
 
 --}}
-<code>{{ $content }}</code>
+<code>{!! $content !!}</code>
