@@ -16,6 +16,6 @@ Contains the inner content of the list, will typically be HTML representing the 
 template.
 
 --}}
-<ol {{ isset($attributes['start']) ? 'start="'.$attributes['start'].'"' : '' }}>
+<ol {!! isset($attributes['start']) ? 'start="'.$attributes['start'].'"' : '' !!}>
     {!! $content !!}
 </ol>
