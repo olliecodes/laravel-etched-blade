@@ -33,6 +33,11 @@
   "scripts": {
     "post-autoload-dump": [
       "@php ./vendor/bin/testbench package:discover --ansi"
+    ],
+    "phpunit": "phpunit --verbose --colors=always",
+    "phpunit-coverage": "XDEBUG_MODE=coverage phpunit --verbose --colors=always --coverage-html build/coverage",
+    "test": [
+      "@phpunit"
     ]
   }
 }
