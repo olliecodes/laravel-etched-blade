@@ -11,4 +11,4 @@ Contains an array containing HTML attributes provided by the Attribute extension
 extension or no attributes are present, this will be an empty array.
 
 --}}
-<img src="{{ $attributes['src'] }}" alt="{{ $attributes['alt'] }}" title="{{ $attributes['title'] }}">
+<img src="{{ $attributes['src'] }}" alt="{{ $attributes['alt'] ?? '' }}" title="{{ $attributes['title'] ?? '' }}">

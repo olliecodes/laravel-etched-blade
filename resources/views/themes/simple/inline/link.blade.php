@@ -15,6 +15,6 @@ $content
 Contains the content, can contain HTML.
 
 --}}
-<a href="{{ $attributes['href'] }}" rel="{{ $attributes['rel'] }}" title="{{ $attributes['title'] }}">
+<a href="{{ $attributes['href'] }}" rel="{{ $attributes['rel'] ?? '' }}" title="{{ $attributes['title'] ?? '' }}">
     {!! $content !!}
 </a>
