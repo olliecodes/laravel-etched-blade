@@ -18,7 +18,9 @@ class InlineHtmlBladeRenderer implements InlineRendererInterface, ConfigurationA
     public function render(AbstractInline $inline, ElementRendererInterface $htmlRenderer)
     {
         if (! ($inline instanceof HtmlInline)) {
+            // @codeCoverageIgnoreStart
             throw new InvalidArgumentException('Incompatible inline type: ' . get_class($inline));
+            // @codeCoverageIgnoreEnd
         }
 
         if ($this->config->get('html_input') === EnvironmentInterface::HTML_INPUT_STRIP) {

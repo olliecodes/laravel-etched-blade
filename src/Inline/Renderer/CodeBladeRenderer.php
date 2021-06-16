@@ -18,7 +18,9 @@ class CodeBladeRenderer implements InlineRendererInterface, ConfigurationAwareIn
     public function render(AbstractInline $inline, ElementRendererInterface $htmlRenderer)
     {
         if (! ($inline instanceof Code)) {
+            // @codeCoverageIgnoreStart
             throw new InvalidArgumentException('Incompatible inline type: ' . get_class($inline));
+            // @codeCoverageIgnoreEnd
         }
 
         return $this->getTheme()->inline('code', [

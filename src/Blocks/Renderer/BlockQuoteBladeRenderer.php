@@ -17,7 +17,9 @@ class BlockQuoteBladeRenderer implements BlockRendererInterface, ConfigurationAw
     public function render(AbstractBlock $block, ElementRendererInterface $htmlRenderer, bool $inTightList = false)
     {
         if (! ($block instanceof BlockQuote)) {
+            // @codeCoverageIgnoreStart
             throw new InvalidArgumentException('Incompatible block type: ' . get_class($block));
+            // @codeCoverageIgnoreEnd
         }
 
         return $this->getTheme()->block('blockquote', [

@@ -19,7 +19,9 @@ class ListItemBladeRenderer implements BlockRendererInterface, ConfigurationAwar
     public function render(AbstractBlock $block, ElementRendererInterface $htmlRenderer, bool $inTightList = false)
     {
         if (! ($block instanceof ListItem)) {
+            // @codeCoverageIgnoreStart
             throw new InvalidArgumentException('Incompatible block type: ' . get_class($block));
+            // @codeCoverageIgnoreEnd
         }
 
         $contents = $htmlRenderer->renderBlocks($block->children(), $inTightList);

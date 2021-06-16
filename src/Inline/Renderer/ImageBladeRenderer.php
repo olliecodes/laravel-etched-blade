@@ -18,7 +18,9 @@ class ImageBladeRenderer implements InlineRendererInterface, ConfigurationAwareI
     public function render(AbstractInline $inline, ElementRendererInterface $htmlRenderer)
     {
         if (! ($inline instanceof Image)) {
+            // @codeCoverageIgnoreStart
             throw new InvalidArgumentException('Incompatible inline type: ' . get_class($inline));
+            // @codeCoverageIgnoreEnd
         }
 
         $attributes        = $inline->getData('attributes', []);

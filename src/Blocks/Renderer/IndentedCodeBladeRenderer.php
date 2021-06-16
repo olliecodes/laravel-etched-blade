@@ -17,7 +17,9 @@ class IndentedCodeBladeRenderer implements BlockRendererInterface, Configuration
     public function render(AbstractBlock $block, ElementRendererInterface $htmlRenderer, bool $inTightList = false)
     {
         if (! ($block instanceof IndentedCode)) {
+            // @codeCoverageIgnoreStart
             throw new \InvalidArgumentException('Incompatible block type: ' . \get_class($block));
+            // @codeCoverageIgnoreEnd
         }
 
         return $this->getTheme()->block('code-indented', [

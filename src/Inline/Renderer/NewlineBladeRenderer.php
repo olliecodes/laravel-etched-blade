@@ -17,7 +17,9 @@ class NewlineBladeRenderer implements InlineRendererInterface, ConfigurationAwar
     public function render(AbstractInline $inline, ElementRendererInterface $htmlRenderer)
     {
         if (! ($inline instanceof Newline)) {
+            // @codeCoverageIgnoreStart
             throw new InvalidArgumentException('Incompatible inline type: ' . get_class($inline));
+            // @codeCoverageIgnoreEnd
         }
 
         return $this->getTheme()->inline('newline', [

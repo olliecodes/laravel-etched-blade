@@ -17,7 +17,9 @@ class ListBladeRenderer implements BlockRendererInterface, ConfigurationAwareInt
     public function render(AbstractBlock $block, ElementRendererInterface $htmlRenderer, bool $inTightList = false)
     {
         if (! ($block instanceof ListBlock)) {
+            // @codeCoverageIgnoreStart
             throw new InvalidArgumentException('Incompatible block type: ' . get_class($block));
+            // @codeCoverageIgnoreEnd
         }
 
         $data       = $block->getListData();

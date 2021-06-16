@@ -18,7 +18,9 @@ class TextBladeRenderer implements InlineRendererInterface, ConfigurationAwareIn
     public function render(AbstractInline $inline, ElementRendererInterface $htmlRenderer)
     {
         if (! ($inline instanceof Text)) {
+            // @codeCoverageIgnoreStart
             throw new InvalidArgumentException('Incompatible inline type: ' . get_class($inline));
+            // @codeCoverageIgnoreEnd
         }
 
         return $this->getTheme()->inline('text', [
