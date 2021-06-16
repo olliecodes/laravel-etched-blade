@@ -17,10 +17,6 @@ trait CommonmarkConfigurationAware
     public function setConfiguration(ConfigurationInterface $configuration): void
     {
         $this->config = $configuration;
-
-        if (property_exists($this, 'parent') && $this->parent instanceof ConfigurationAwareInterface) {
-            $this->parent->setConfiguration($configuration);
-        }
     }
 
     protected function getTheme(): Theme
