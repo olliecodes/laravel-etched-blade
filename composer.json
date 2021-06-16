@@ -1,43 +1,45 @@
 {
-  "name": "olliecodes/laravel-etched-blade",
-  "description": "A Laravel package that uses blade templates to parse and convert markdown to HTML",
-  "type": "library",
-  "require": {
-    "php": "^7.3|^8.0",
-    "illuminate/view": "^8.0",
-    "league/commonmark": "^1.6",
-    "webuni/front-matter": "^1.2"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "^9.5",
-    "orchestra/testbench": "^6.17"
-  },
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Ollie Read",
-      "email": "ollie@ollie.codes"
-    }
-  ],
-  "minimum-stability": "stable",
-  "autoload": {
-    "psr-4": {
-      "OllieCodes\\Etched\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "OllieCodes\\Etched\\Tests\\": "tests/"
-    }
-  },
-  "scripts": {
-    "post-autoload-dump": [
-      "@php ./vendor/bin/testbench package:discover --ansi"
+    "name": "olliecodes/laravel-etched-blade",
+    "description": "A Laravel package that uses blade templates to parse and convert markdown to HTML",
+    "type": "library",
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/view": "^8.0",
+        "league/commonmark": "^1.6",
+        "webuni/front-matter": "^1.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "orchestra/testbench": "^6.17",
+        "marcocesarato/php-conventional-changelog": "^1.10"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ollie Read",
+            "email": "ollie@ollie.codes"
+        }
     ],
-    "phpunit": "phpunit --verbose --colors=always",
-    "phpunit-coverage": "XDEBUG_MODE=coverage phpunit --verbose --colors=always --coverage-html build/coverage",
-    "test": [
-      "@phpunit"
-    ]
-  }
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "OllieCodes\\Etched\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "OllieCodes\\Etched\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php ./vendor/bin/testbench package:discover --ansi"
+        ],
+        "phpunit": "phpunit --verbose --colors=always",
+        "phpunit-coverage": "XDEBUG_MODE=coverage phpunit --verbose --colors=always --coverage-html build/coverage",
+        "test": [
+            "@phpunit"
+        ]
+    },
+    "version": "1.0.0"
 }
