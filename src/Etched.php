@@ -46,11 +46,11 @@ class Etched
         $config = $this->config('themes.' . $name);
 
         if ($config === null) {
-            throw new InvalidArgumentException('No theme found for \'%s\'', $name);
+            throw new InvalidArgumentException(sprintf('No theme found for \'%s\'', $name));
         }
 
         if (empty($config)) {
-            throw new InvalidArgumentException('Empty theme configuration for \'%s\'', $name);
+            throw new InvalidArgumentException(sprintf('Empty theme configuration for \'%s\'', $name));
         }
 
         $mergedConfig = [
