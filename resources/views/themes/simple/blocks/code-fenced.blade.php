@@ -19,4 +19,4 @@ $content
 Contains the content, will not contain HTML.
 
 --}}
-<pre><code @if(!empty($languages))class="{{ implode(' ', array_map(static function(string $language) { return 'language-'.$language; }, $languages)) }}"@endif>{{ $content }}</code></pre>
+<pre><code @if(!empty($languages))class="{{ implode(' ', array_map(static function(string $language) { return 'language-'.$language; }, $languages)) }}"@endif>{!! $content !!}</code></pre>
