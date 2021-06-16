@@ -42,7 +42,7 @@ class EtchedServiceProvider extends ServiceProvider
         $compiler->directive('etched', function ($expression) {
             self::$etchedTheme = $expression;
 
-            return '<?php \OllieCodes\Etched\Facades\Etched::render(<<<MARKDOWN';
+            return '<?php echo \OllieCodes\Etched\Facades\Etched::render(<<<MARKDOWN';
         });
 
 
