@@ -39,7 +39,8 @@
         "phpunit-coverage": "XDEBUG_MODE=coverage phpunit --verbose --colors=always --coverage-html build/coverage",
         "test": [
             "@phpunit"
-        ]
+        ],
+        "changelog": "conventional-changelog --config=.changelog"
     },
     "version": "1.0.0"
 }
