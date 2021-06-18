@@ -16,10 +16,8 @@ class EtchedServiceProvider extends ServiceProvider
             $this->publishAssets();
         }
 
-        if (config('etched', false)) {
-            $this->registerViews();
-            $this->registerBladeDirectives();
-        }
+        $this->registerViews();
+        $this->registerBladeDirectives();
     }
 
     private function publishAssets(): void
