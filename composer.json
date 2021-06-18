@@ -42,5 +42,15 @@
         ],
         "changelog": "conventional-changelog --config=.changelog"
     },
-    "version": "1.0.0"
+    "version": "1.0.1",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "OllieCodes\\Etched\\EtchedServiceProvider"
+            ],
+            "aliases": {
+                "Etched": "OllieCodes\\Etched\\Facades\\Etched"
+            }
+        }
+    }
 }
