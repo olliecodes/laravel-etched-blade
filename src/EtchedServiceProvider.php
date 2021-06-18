@@ -30,10 +30,8 @@ class EtchedServiceProvider extends ServiceProvider
 
     public function register(): void
     {
-        if (config('etched', false)) {
-            $this->registerEtchedService();
-            $this->registerEtchedViewEngine();
-        }
+        $this->registerEtchedService();
+        $this->registerEtchedViewEngine();
     }
 
     private function registerBladeDirectives(): void
