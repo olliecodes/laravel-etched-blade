@@ -16,8 +16,10 @@ class EtchedServiceProvider extends ServiceProvider
             $this->publishAssets();
         }
 
-        $this->registerViews();
-        $this->registerBladeDirectives();
+        if (config('etched', false)) {
+            $this->registerViews();
+            $this->registerBladeDirectives();
+        }
     }
 
     private function publishAssets(): void
@@ -28,10 +30,12 @@ class EtchedServiceProvider extends ServiceProvider
         ], 'config');
     }
 
-    public function register()
+    public function register(): void
     {
-        $this->registerEtchedService();
-        $this->registerEtchedViewEngine();
+        if (config('etched', false)) {
+            $this->registerEtchedService();
+            $this->registerEtchedViewEngine();
+        }
     }
 
     private function registerBladeDirectives(): void
@@ -50,7 +54,7 @@ class EtchedServiceProvider extends ServiceProvider
             $theme             = self::$etchedTheme;
             self::$etchedTheme = null;
 
-            return "\n".'MARKDOWN' . ($theme ? ', ' . $theme : '') . '); ?>';
+            return "\n" . 'MARKDOWN' . ($theme ? ', ' . $theme : '') . '); ?>';
         });
     }
 
@@ -59,7 +63,7 @@ class EtchedServiceProvider extends ServiceProvider
         // Register the etched service as shared
         $this->app->bind(Etched::class, function () {
             return new Etched(
-                config('etched'),
+                config('etched', []),
                 $this->app->make(Factory::class)
             );
         }, true);
