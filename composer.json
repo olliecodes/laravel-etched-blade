@@ -42,7 +42,7 @@
         ],
         "changelog": "conventional-changelog --config=.changelog"
     },
-    "version": "1.0.3",
+    "version": "1.0.4",
     "extra": {
         "laravel": {
             "providers": [

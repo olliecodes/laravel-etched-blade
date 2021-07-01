@@ -4,6 +4,15 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [1.0.4](https://github.com/olliecodes/laravel-etched-blade/compare/v1.0.3...v1.0.4) (2021-07-01)
+
+
+### Bug Fixes
+
+* Add missing view publishing functionality ([0dbec4](https://github.com/olliecodes/laravel-etched-blade/commit/0dbec4c9345f081730b4be9aa4761f4c2fc88f2f))
+
+---
+
 ## [1.0.3](https://github.com/olliecodes/laravel-etched-blade/compare/v1.0.2...v1.0.3) (2021-07-01)
 
 
