@@ -17,13 +17,13 @@ $ composer require olliecodes/laravel-etched-blade
 Once installed you'll want to publish the config.
 
 ```bash
-$ php artisan vendor:publish --provider="\OllieCodes\Etched\EtchedServiceProvider" --tag=config
+$ php artisan vendor:publish --provider="OllieCodes\Etched\EtchedServiceProvider" --tag=config
 ```
 
 If you want to modify the default themes you can publish those too.
 
 ```bash
-$ php artisan vendor:publish --provider="\OllieCodes\Etched\EtchedServiceProvider" --tag=views
+$ php artisan vendor:publish --provider="OllieCodes\Etched\EtchedServiceProvider" --tag=views
 ```
 
 ### Requirements
