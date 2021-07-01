@@ -4,6 +4,15 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [1.0.3](https://github.com/olliecodes/laravel-etched-blade/compare/v1.0.2...v1.0.3) (2021-07-01)
+
+
+### Bug Fixes
+
+* Remove /resources/ from .gitattributes ([2bce58](https://github.com/olliecodes/laravel-etched-blade/commit/2bce5835234da4d3fba5c84cb29dfec517e8babd)) *[*[*@adevade*](https://github.com/adevade)*]*
+
+---
+
 ## [1.0.2](https://github.com/olliecodes/laravel-etched-blade/compare/v1.0.1...v1.0.2) (2021-06-18)
 
 
