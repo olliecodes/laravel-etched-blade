@@ -26,6 +26,11 @@ class EtchedServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../config/etched.php' => config_path('etched.php'),
         ], 'config');
+
+        // Publish the views
+        $this->publishes([
+            __DIR__ . '/../resources/views' => resource_path('views/vendor/etched'),
+        ], 'views');
     }
 
     public function register(): void
