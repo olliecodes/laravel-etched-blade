@@ -25,4 +25,15 @@ class EtchedTest extends TestCase
 
         self::assertSame($content, $renderedContent);
     }
+
+    /**
+     * @test
+     */
+    public function testsSomethingTailwind(): void
+    {
+        $etched  = $this->app->make(Etched::class);
+        $content = file_get_contents(__DIR__ . '/Fixtures/markdown/tailwind-test.md');
+
+        dd($etched->render($content));
+    }
 }
